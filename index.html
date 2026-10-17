@@ -3,39 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фельцан  Екатерина — личная страница</title>
+    <title>Фельцан Екатерина — личная страница</title>
+
+    <!-- Старинные шрифты с поддержкой кириллицы -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Marck+Script&display=swap" rel="stylesheet">
+
     <style>
+        /* ===== Базовые настройки ===== */
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0d0d0d;
-            color: #e0e0e0;
-            line-height: 1.7;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            background: #0a120e;
+            background-image:
+                radial-gradient(ellipse at 20% 10%, rgba(30, 100, 60, 0.15) 0%, transparent 55%),
+                radial-gradient(ellipse at 80% 90%, rgba(20, 80, 50, 0.12) 0%, transparent 55%),
+                radial-gradient(circle at 50% 50%, #0f1a14 0%, #070d09 100%);
+            color: #b8c4bc;
+            line-height: 1.8;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            position: relative;
+        }
+
+        /* Мерцающие «искры» на фоне */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(1px 1px at 10% 20%, rgba(160, 210, 180, 0.5), transparent),
+                radial-gradient(1px 1px at 30% 60%, rgba(120, 180, 140, 0.4), transparent),
+                radial-gradient(1.5px 1.5px at 55% 15%, rgba(100, 220, 150, 0.55), transparent),
+                radial-gradient(1px 1px at 70% 40%, rgba(160, 210, 180, 0.4), transparent),
+                radial-gradient(1.5px 1.5px at 85% 75%, rgba(80, 200, 130, 0.45), transparent),
+                radial-gradient(1px 1px at 45% 85%, rgba(140, 200, 170, 0.3), transparent),
+                radial-gradient(1px 1px at 15% 90%, rgba(80, 150, 110, 0.4), transparent),
+                radial-gradient(1.5px 1.5px at 90% 10%, rgba(100, 220, 150, 0.5), transparent);
+            pointer-events: none;
+            z-index: 0;
+            animation: twinkle 5s ease-in-out infinite alternate;
+        }
+        @keyframes twinkle {
+            from { opacity: 0.6; }
+            to   { opacity: 1; }
         }
 
         /* ===== Шапка ===== */
         header {
-            padding: 3rem 1.5rem 2rem;
+            position: relative;
+            z-index: 1;
+            padding: 4rem 1.5rem 2.5rem;
             text-align: center;
-            border-bottom: 1px solid #222;
+            border-bottom: 1px solid rgba(80, 180, 120, 0.2);
         }
+
         header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #fff;
-            letter-spacing: 1px;
+            font-family: 'Marck Script', 'Cormorant Garamond', cursive;
+            font-size: 2.8rem;
+            font-weight: 400;
+            color: #7ee0a0;
+            letter-spacing: 2px;
             margin-bottom: 0.5rem;
+            text-shadow:
+                0 0 20px rgba(100, 220, 150, 0.4),
+                0 0 40px rgba(60, 160, 100, 0.2);
         }
-        header p { color: #888; font-size: 1rem; font-style: italic; }
+
+        header h1::after {
+            content: "✦";
+            display: block;
+            color: #3d7a55;
+            font-size: 0.9rem;
+            margin-top: 0.6rem;
+            letter-spacing: 10px;
+            text-indent: 10px;
+        }
+
+        header p {
+            color: #7a9a85;
+            font-size: 1.1rem;
+            font-style: italic;
+            letter-spacing: 1px;
+            margin-top: 0.4rem;
+        }
 
         /* ===== Основной контент ===== */
         main {
+            position: relative;
+            z-index: 1;
             flex: 1;
-            max-width: 700px;
+            max-width: 720px;
             margin: 0 auto;
             padding: 3rem 1.5rem;
             width: 100%;
@@ -44,43 +105,61 @@
         section { margin-bottom: 2.5rem; }
 
         h2 {
-            font-size: 1.3rem;
-            color: #fff;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: #7ee0a0;
             margin-bottom: 1rem;
-            padding-bottom: 0.4rem;
-            border-bottom: 1px solid #2a2a2a;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(80, 180, 120, 0.25);
             font-weight: 600;
+            letter-spacing: 1.5px;
         }
 
-        p { color: #b0b0b0; font-size: 1rem; margin-bottom: 1rem; }
+        h2::before {
+            content: "❦ ";
+            color: #3d7a55;
+            font-size: 1rem;
+            margin-right: 0.3rem;
+        }
+
+        p {
+            color: #a0b8a8;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
 
         a {
-            color: #e0e0e0;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            transition: color 0.25s;
+            color: #7ee0a0;
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(100, 220, 150, 0.5);
+            transition: color 0.25s, border-color 0.25s;
         }
-        a:hover { color: #fff; }
+        a:hover { color: #b0f0c8; border-bottom-color: #b0f0c8; }
 
         /* ===== Кнопки-аккордеоны ===== */
         .accordion {
-            border: 1px solid #222;
-            border-radius: 8px;
+            border: 1px solid rgba(80, 180, 120, 0.2);
+            border-radius: 4px;
             margin-bottom: 1rem;
             overflow: hidden;
-            transition: border-color 0.3s;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            background: rgba(12, 22, 16, 0.6);
         }
-        .accordion:hover { border-color: #3a3a3a; }
+        .accordion:hover {
+            border-color: rgba(100, 220, 150, 0.5);
+            box-shadow: 0 0 15px rgba(80, 200, 130, 0.08);
+        }
 
         .accordion-btn {
             width: 100%;
-            background: #141414;
-            color: #e0e0e0;
+            background: transparent;
+            color: #b8c4bc;
             border: none;
-            padding: 1rem 1.2rem;
-            font-size: 1rem;
+            padding: 1.1rem 1.3rem;
+            font-size: 1.15rem;
             font-weight: 600;
-            font-family: inherit;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 1px;
             text-align: left;
             cursor: pointer;
             display: flex;
@@ -88,97 +167,112 @@
             align-items: center;
             transition: background 0.3s, color 0.3s;
         }
-        .accordion-btn:hover { background: #1c1c1c; color: #fff; }
-        .accordion-btn.active { background: #1a1a1a; color: #fff; }
+        .accordion-btn:hover { background: rgba(80, 200, 130, 0.06); color: #b0f0c8; }
+        .accordion-btn.active {
+            color: #b0f0c8;
+            background: rgba(80, 200, 130, 0.08);
+        }
 
-        /* Стрелочка */
         .accordion-btn::after {
             content: "+";
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 300;
-            color: #888;
-            transition: transform 0.3s, color 0.3s;
+            color: #3d7a55;
+            transition: transform 0.35s, color 0.35s;
             line-height: 1;
         }
         .accordion-btn.active::after {
             content: "−";
-            color: #fff;
+            color: #7ee0a0;
+            transform: rotate(180deg);
         }
 
         .accordion-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-            padding: 0 1.2rem;
-            background: #111;
+            transition: max-height 0.45s ease, padding 0.45s ease;
+            padding: 0 1.3rem;
+            background: rgba(7, 13, 9, 0.4);
         }
         .accordion-content.open {
-            padding: 1rem 1.2rem;
+            padding: 1rem 1.3rem;
         }
-        .accordion-content p { margin-bottom: 0.5rem; }
+        .accordion-content p {
+            margin-bottom: 0.6rem;
+            font-size: 1.05rem;
+        }
         .accordion-content p:last-child { margin-bottom: 0; }
 
         /* ===== Футер ===== */
         footer.site-footer {
+            position: relative;
+            z-index: 1;
             text-align: center;
-            padding: 1.8rem 1.5rem;
-            border-top: 1px solid #222;
-            color: #666;
-            font-size: 0.85rem;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid rgba(80, 180, 120, 0.2);
+            color: #5a7a65;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
         }
-        footer.site-footer p:first-child { color: #999; font-weight: 600; }
+        footer.site-footer p:first-child {
+            color: #7ee0a0;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
         footer.site-footer p:last-child {
-            font-size: 0.75rem; color: #444; margin-top: 0.3rem;
+            font-size: 0.8rem;
+            color: #3a5a45;
+            margin-top: 0.4rem;
+            font-style: italic;
         }
 
+        /* ===== Адаптивность ===== */
         @media (max-width: 600px) {
-            header h1 { font-size: 1.5rem; }
-            header { padding: 2rem 1rem 1.5rem; }
+            header { padding: 2.5rem 1rem 1.8rem; }
+            header h1 { font-size: 2rem; }
             main { padding: 2rem 1rem; }
+            h2 { font-size: 1.3rem; }
+            p, .accordion-btn { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Фельцан  Екатерина</h1>
+        <h1>Фельцан Екатерина</h1>
         <p>Личная страница</p>
     </header>
 
     <main>
         <section>
             <h2>Обо мне</h2>
-            <p>Я учусь в Речном училище Им.И.П.Кулибина на 3 курсе. Группа 31-ОИБ.Являюсь заместителем старшины.Работаю в SPAR.Есть кот Тео, полное имя Теодор Нотт. В свободное время люблю читать,хотя свободного времени у меня не очень много.</.</p>
+            <p>Я учусь в Речном училище Им.И.П.Кулибина на 3 курсе. Группа 31-ОИБ.Являюсь заместителем старшины.Работаю в SPAR.Есть кот Тео, полное имя Теодор Нотт. В свободное время люблю читать,хотя свободного времени у меня не очень много.</</p>
         </section>
 
         <section>
             <h2>Подробнее</h2>
 
-            <!-- Кнопка 1 -->
             <div class="accordion">
                 <button class="accordion-btn" type="button">Чем я занимаюсь</button>
                 <div class="accordion-content">
-                    <p>Учусь — краткое описание.</p>
-                    <p>Работаю — краткое описание.</p>
-                    <p>Пытаюсь жить эту жизнь — краткое описание.</p>
+                    <p>Учусь.Работаю. — краткое описание.</p>
+                    <p>Пытаюсь жить эту жизнь — краткое описание.</p>                
                 </div>
             </div>
 
-            <!-- Кнопка 2 -->
             <div class="accordion">
                 <button class="accordion-btn" type="button">Мои интересы</button>
                 <div class="accordion-content">
-                    <p>Найти профессию по душе.</p>
-                    <p>Читать,читать,очень много читать...</p>
-                    <p>Спать.И желательно высыпаться.p.s не в банку.</p>
+                    <p>Интерес 1-Где моя сова из Хогвартса</p>
+                    <p>Интерес 2 - Спать и желательно выспаться. </p>
+                    <p>Интерес 3 — чем занимаюсь в свободное время-у меня его почти нет.</p>
                 </div>
             </div>
 
-            <!-- Кнопка 3 -->
             <div class="accordion">
                 <button class="accordion-btn" type="button">Контакты</button>
                 <div class="accordion-content">
-                    <p>Связаться со мной можно, но не нужно. Я сама с вами свяжусь <a href="mailto:ваша.почта@example.com"</a></p>
+                    <p>Связаться со мной можно, но не нужно. Я сама с вами свяжусь <a href="mailto:ваша.почта@example.com">тут типо должна быть почта.</a></p>
                     <p></p>
                 </div>
             </div>
@@ -197,7 +291,6 @@
                 var content = this.nextElementSibling;
                 var isOpen = content.classList.contains('open');
 
-                // Закрыть все остальные
                 document.querySelectorAll('.accordion-content').forEach(function(c) {
                     c.style.maxHeight = null;
                     c.classList.remove('open');
@@ -206,7 +299,6 @@
                     b.classList.remove('active');
                 });
 
-                // Если текущий был закрыт — открыть его
                 if (!isOpen) {
                     content.classList.add('open');
                     content.style.maxHeight = content.scrollHeight + 'px';
