@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фельцан Екатерина — личная страница</title>
+    <title>Фельцан  Екатерина — личная страница</title>
     <style>
-        /* ===== Базовые настройки ===== */
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
@@ -24,20 +23,14 @@
             text-align: center;
             border-bottom: 1px solid #222;
         }
-
         header h1 {
             font-size: 2rem;
             font-weight: 700;
-            color: #ffffff;
+            color: #fff;
             letter-spacing: 1px;
             margin-bottom: 0.5rem;
         }
-
-        header p {
-            color: #888;
-            font-size: 1rem;
-            font-style: italic;
-        }
+        header p { color: #888; font-size: 1rem; font-style: italic; }
 
         /* ===== Основной контент ===== */
         main {
@@ -48,43 +41,18 @@
             width: 100%;
         }
 
-        section {
-            margin-bottom: 2.5rem;
-        }
+        section { margin-bottom: 2.5rem; }
 
         h2 {
             font-size: 1.3rem;
-            color: #ffffff;
+            color: #fff;
             margin-bottom: 1rem;
             padding-bottom: 0.4rem;
             border-bottom: 1px solid #2a2a2a;
             font-weight: 600;
         }
 
-        p {
-            color: #b0b0b0;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        ul li {
-            color: #b0b0b0;
-            padding: 0.4rem 0;
-            padding-left: 1.4rem;
-            position: relative;
-        }
-
-        ul li::before {
-            content: "—";
-            position: absolute;
-            left: 0;
-            color: #555;
-        }
+        p { color: #b0b0b0; font-size: 1rem; margin-bottom: 1rem; }
 
         a {
             color: #e0e0e0;
@@ -92,10 +60,63 @@
             text-underline-offset: 3px;
             transition: color 0.25s;
         }
+        a:hover { color: #fff; }
 
-        a:hover {
-            color: #ffffff;
+        /* ===== Кнопки-аккордеоны ===== */
+        .accordion {
+            border: 1px solid #222;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: border-color 0.3s;
         }
+        .accordion:hover { border-color: #3a3a3a; }
+
+        .accordion-btn {
+            width: 100%;
+            background: #141414;
+            color: #e0e0e0;
+            border: none;
+            padding: 1rem 1.2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s, color 0.3s;
+        }
+        .accordion-btn:hover { background: #1c1c1c; color: #fff; }
+        .accordion-btn.active { background: #1a1a1a; color: #fff; }
+
+        /* Стрелочка */
+        .accordion-btn::after {
+            content: "+";
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: #888;
+            transition: transform 0.3s, color 0.3s;
+            line-height: 1;
+        }
+        .accordion-btn.active::after {
+            content: "−";
+            color: #fff;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 1.2rem;
+            background: #111;
+        }
+        .accordion-content.open {
+            padding: 1rem 1.2rem;
+        }
+        .accordion-content p { margin-bottom: 0.5rem; }
+        .accordion-content p:last-child { margin-bottom: 0; }
 
         /* ===== Футер ===== */
         footer.site-footer {
@@ -105,19 +126,11 @@
             color: #666;
             font-size: 0.85rem;
         }
-
-        footer.site-footer p:first-child {
-            color: #999;
-            font-weight: 600;
-        }
-
+        footer.site-footer p:first-child { color: #999; font-weight: 600; }
         footer.site-footer p:last-child {
-            font-size: 0.75rem;
-            color: #444;
-            margin-top: 0.3rem;
+            font-size: 0.75rem; color: #444; margin-top: 0.3rem;
         }
 
-        /* ===== Адаптивность ===== */
         @media (max-width: 600px) {
             header h1 { font-size: 1.5rem; }
             header { padding: 2rem 1rem 1.5rem; }
@@ -128,28 +141,48 @@
 <body>
 
     <header>
-        <h1>Фельцан Екатерина</h1>
+        <h1>Фельцан  Екатерина</h1>
         <p>Личная страница</p>
     </header>
 
     <main>
         <section>
             <h2>Обо мне</h2>
-            <p>Я учусь в Речном училище Им.И.П.Кулибина на 3 курсе. Группа 31-ОИБ.Являюсь заместителем старшины.Работаю в SPAR.Есть кот Тео, полное имя Теодор Нотт. В свободное время люблю читать,хотя свободного времени у меня не очень много.</p>
+            <p>Я учусь в Речном училище Им.И.П.Кулибина на 3 курсе. Группа 31-ОИБ.Являюсь заместителем старшины.Работаю в SPAR.Есть кот Тео, полное имя Теодор Нотт. В свободное время люблю читать,хотя свободного времени у меня не очень много.</.</p>
         </section>
 
         <section>
-            <h2>Чем я занимаюсь?</h2>
-            <ul>
-                <li>Учусь </li>
-                <li>Работаю </li>
-                <li>Пытаюсь жить эту жизнь </li>
-            </ul>
-        </section>
+            <h2>Подробнее</h2>
 
-        <section>
-            <h2>Контакты</h2>
-            <p>Связаться со мной можно, но не нужно. Я сама с вами свяжусь.</a></p>
+            <!-- Кнопка 1 -->
+            <div class="accordion">
+                <button class="accordion-btn" type="button">Чем я занимаюсь</button>
+                <div class="accordion-content">
+                    <p>Учусь — краткое описание.</p>
+                    <p>Работаю — краткое описание.</p>
+                    <p>Пытаюсь жить эту жизнь — краткое описание.</p>
+                </div>
+            </div>
+
+            <!-- Кнопка 2 -->
+            <div class="accordion">
+                <button class="accordion-btn" type="button">Мои интересы</button>
+                <div class="accordion-content">
+                    <p>Найти профессию по душе.</p>
+                    <p>Читать,читать,очень много читать...</p>
+                    <p>Спать.И желательно высыпаться.p.s не в банку.</p>
+                </div>
+            </div>
+
+            <!-- Кнопка 3 -->
+            <div class="accordion">
+                <button class="accordion-btn" type="button">Контакты</button>
+                <div class="accordion-content">
+                    <p>Связаться со мной можно, но не нужно. Я сама с вами свяжусь <a href="mailto:ваша.почта@example.com"</a></p>
+                    <p></p>
+                </div>
+            </div>
+
         </section>
     </main>
 
@@ -157,6 +190,31 @@
         <p>&copy; 2026 Фельцан Екатерина. Все права защищены.</p>
         <p>Личная страница. Материалы сайта принадлежат автору.</p>
     </footer>
+
+    <script>
+        document.querySelectorAll('.accordion-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var content = this.nextElementSibling;
+                var isOpen = content.classList.contains('open');
+
+                // Закрыть все остальные
+                document.querySelectorAll('.accordion-content').forEach(function(c) {
+                    c.style.maxHeight = null;
+                    c.classList.remove('open');
+                });
+                document.querySelectorAll('.accordion-btn').forEach(function(b) {
+                    b.classList.remove('active');
+                });
+
+                // Если текущий был закрыт — открыть его
+                if (!isOpen) {
+                    content.classList.add('open');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    this.classList.add('active');
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
